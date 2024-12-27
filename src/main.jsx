@@ -31,6 +31,5 @@ root.render(
       mobile = "+91-7294302470"
       email = "Pumpkin@gmail.com"
       />
-     
   </main>
 )

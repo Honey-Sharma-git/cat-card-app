@@ -5,7 +5,6 @@
 *::after,
 *::before {
   box-sizing: border-box;
-  /* outline: 1px solid lime; */
 }
 * {
   margin: 0;
@@ -20,13 +19,12 @@ button {
 /* SCROLLBAR STYLING */
 /* width */
 ::-webkit-scrollbar {
-  width: 1px;
-  height: 5px;
+  height: 3px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: lightgray;
 }
 
 /* Handle */
@@ -64,7 +62,6 @@ button {
 .btn:hover {
   background-color: pink;
   transform: scale(1.5);
-  /* animation: beat 1s infinite alternate linear; */
 }
 @keyframes beat {
   to {
@@ -88,13 +85,6 @@ body {
   font-size: 0.9rem;
   font-family: var(--FF);
   padding: 1rem;
-  /* background-color: var(--BG-COLOR);
-  background-image: linear-gradient(
-    135deg,
-    var(--GRAD-1),
-    var(--GRAD-2) 50%,
-    var(--GRAD-3) 100%
-  ); */
   background-image: url("../assets/backdrop.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -158,7 +148,7 @@ body {
   width: 100%;
   aspect-ratio: 1;
   border-radius: 50%;
-  object-fit: contain;
+  object-fit: cover;
 }
 .card__details-section {
   width: 100%;

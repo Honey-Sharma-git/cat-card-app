@@ -15,3 +15,11 @@ export default function App(prop){
 
   )
 }
+//Destructuring: 
+const obj = {
+id: "234",
+name: 'Name kumar'
+}
+// variables should have same name as property name
+const {id:identity, name} = obj;
+console.log(identity);
