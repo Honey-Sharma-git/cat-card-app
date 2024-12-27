@@ -1,0 +1,192 @@
+/* IMPORTS */
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+/* BASIC CSS RESET */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  /* outline: 1px solid lime; */
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+}
+button {
+  font: inherit;
+}
+/* SCROLLBAR STYLING */
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+  height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--GRAD-3);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* VARIABLES */
+:root {
+  --FF: "Open Sans", sans-serif;
+  --BG-COLOR: #868e9e87;
+  --BTN-COLOR: white;
+  --FONT-COLOR: black;
+  --SHADOW-COLOR: ;
+  --GRAD-1: #0e1c26;
+  --GRAD-2: #2a454b;
+  --GRAD-3: #294861;
+}
+/* UTILITY CLASSES */
+.btn {
+  padding: 8px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  border: none;
+  background-color: var(--BTN-COLOR);
+}
+.btn:hover {
+  background-color: pink;
+  transform: scale(1.5);
+  /* animation: beat 1s infinite alternate linear; */
+}
+@keyframes beat {
+  to {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+.title {
+  width: 60px;
+}
+.content {
+  width: 18ch;
+  overflow: auto;
+  text-align: left;
+  white-space: normal;
+}
+
+/* GENERAL STYLES */
+body {
+  min-height: 100vh;
+  font-size: 0.9rem;
+  font-family: var(--FF);
+  padding: 1rem;
+  /* background-color: var(--BG-COLOR);
+  background-image: linear-gradient(
+    135deg,
+    var(--GRAD-1),
+    var(--GRAD-2) 50%,
+    var(--GRAD-3) 100%
+  ); */
+  background-image: url("../assets/backdrop.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--FONT-COLOR);
+  color: black;
+}
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  row-gap: 20px;
+  width: 250px;
+  aspect-ratio: 2;
+  border-radius: 20px;
+  padding: 1rem;
+  background-color: var(--BG-COLOR);
+  backdrop-filter: blur(10px);
+  transition: transform 0.1s;
+}
+.card:hover {
+  transform: scale(1.05);
+  backdrop-filter: blur(5px);
+}
+.card__img-checkbox-section {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 8px;
+}
+.card__checkbox-container {
+  width: 100%;
+}
+.card__img-container {
+  width: 100px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 5px solid var(--BTN-COLOR);
+  position: relative;
+  cursor: pointer;
+}
+.card__img-container:hover::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  z-index: -1;
+  width: 120px;
+  aspect-ratio: 1;
+  animation: beat 0.8s infinite;
+  border-radius: 50%;
+  border: 18px solid pink;
+}
+.card__contact-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+.card__details-section {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+.details-section__name-container {
+  display: flex;
+  justify-content: space-between;
+}
+.details-section__mob-container,
+.details-section__email-container {
+  display: flex;
+  justify-content: space-between;
+}
+.card__button-section {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+}
+.card__more-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+.more-section__btn {
+  border: none;
+  background-color: transparent;
+  color: lightgray;
+  cursor: pointer;
+}
+.more-section__btn:hover {
+  text-decoration: underline;
+}
